@@ -19,9 +19,9 @@ import java.util.concurrent.TimeUnit;
 public class OkHttpUtil {
 
 	private static OkHttpClient okHttpClient = new OkHttpClient().newBuilder().retryOnConnectionFailure(true)
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS).build();
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .writeTimeout(60, TimeUnit.SECONDS).build();
 
 	private static final MediaType JSON_TYPE
 			= MediaType.parse("application/json; charset=utf-8");

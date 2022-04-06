@@ -61,6 +61,7 @@ public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer> i
         Consumer consumer = new Consumer();
         BeanUtils.copyProperties(consumerRegisterDTO,consumer);
         consumer.setUsername(CodeNoUtil.getNo(CodePrefixCode.CODE_NO_PREFIX));
+        consumerRegisterDTO.setUsername(consumer.getUsername());
         consumer.setUserNo(CodeNoUtil.getNo(CodePrefixCode.CODE_CONSUMER_PREFIX));
         consumer.setIsBindCard(0);
         save(consumer);

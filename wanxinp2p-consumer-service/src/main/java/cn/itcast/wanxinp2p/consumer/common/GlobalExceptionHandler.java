@@ -43,7 +43,6 @@ public class GlobalExceptionHandler {
 		}else if(e instanceof HttpMediaTypeNotSupportedException){
 			return new RestResponse<Nullable>(415, "不支持媒体类型");
 		}
-
 		log.error("【系统异常】" + e.getMessage());
 		return  new RestResponse<Nullable>(CommonErrorCode.UNKOWN.getCode(), CommonErrorCode.UNKOWN.getDesc());
 	}

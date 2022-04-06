@@ -1,11 +1,63 @@
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:03:14,801 INFO [AsyncResolver-bootstrap-executor-0][ConfigClusterResolver.java:43] - Resolving eureka endpoints via configuration
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:08:14,803 INFO [AsyncResolver-bootstrap-executor-0][ConfigClusterResolver.java:43] - Resolving eureka endpoints via configuration
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:14,805 INFO [AsyncResolver-bootstrap-executor-0][ConfigClusterResolver.java:43] - Resolving eureka endpoints via configuration
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,533 INFO [Thread-54][EurekaServiceRegistry.java:65] - Unregistering application GATEWAY-SERVER with eureka with status DOWN
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,534 WARN [Thread-54][DiscoveryClient.java:1303] - Saw local status change event StatusChangeEvent [timestamp=1649081625534, current=DOWN, previous=UP]
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,535 INFO [DiscoveryClient-InstanceInfoReplicator-0][DiscoveryClient.java:826] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010: registering service...
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,551 INFO [Thread-54][ZuulFilterInitializer.java:77] - Stopping filter initializer
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,545 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:91] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:52,244 INFO [http-nio-53010-exec-3][ChainedDynamicProperty.java:115] - Flipping property: consumer-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:52,261 INFO [http-nio-53010-exec-3][ShutdownEnabledTimer.java:58] - Shutdown hook installed for: NFLoadBalancer-PingTimer-consumer-service
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:52,262 INFO [http-nio-53010-exec-3][BaseLoadBalancer.java:197] - Client: consumer-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=consumer-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:52,267 INFO [http-nio-53010-exec-3][DynamicServerListLoadBalancer.java:222] - Using serverListUpdater PollingServerListUpdater
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:52,281 INFO [http-nio-53010-exec-3][ChainedDynamicProperty.java:115] - Flipping property: consumer-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:52,283 INFO [http-nio-53010-exec-3][DynamicServerListLoadBalancer.java:150] - DynamicServerListLoadBalancer for client consumer-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=consumer-service,current list of Servers=[192.168.56.1:53050],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:53050;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@6ec9b606
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:02:53,270 INFO [PollingServerListUpdater-0][ChainedDynamicProperty.java:115] - Flipping property: consumer-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:03:13,174 INFO [AsyncResolver-bootstrap-executor-0][ConfigClusterResolver.java:43] - Resolving eureka endpoints via configuration
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:08:13,175 INFO [AsyncResolver-bootstrap-executor-0][ConfigClusterResolver.java:43] - Resolving eureka endpoints via configuration
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:09,131 INFO [http-nio-53010-exec-1][ChainedDynamicProperty.java:115] - Flipping property: account-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:09,133 INFO [http-nio-53010-exec-1][ShutdownEnabledTimer.java:58] - Shutdown hook installed for: NFLoadBalancer-PingTimer-account-service
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:09,133 INFO [http-nio-53010-exec-1][BaseLoadBalancer.java:197] - Client: account-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=account-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:09,134 INFO [http-nio-53010-exec-1][DynamicServerListLoadBalancer.java:222] - Using serverListUpdater PollingServerListUpdater
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:09,136 INFO [http-nio-53010-exec-1][ChainedDynamicProperty.java:115] - Flipping property: account-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:09,136 INFO [http-nio-53010-exec-1][DynamicServerListLoadBalancer.java:150] - DynamicServerListLoadBalancer for client account-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=account-service,current list of Servers=[192.168.56.1:53030],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.56.1:53030;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@586159f6
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:11:10,137 INFO [PollingServerListUpdater-0][ChainedDynamicProperty.java:115] - Flipping property: account-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:13:13,177 INFO [AsyncResolver-bootstrap-executor-0][ConfigClusterResolver.java:43] - Resolving eureka endpoints via configuration
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,274 INFO [Thread-67][PollingServerListUpdater.java:53] - Shutting down the Executor Pool for PollingServerListUpdater
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,275 INFO [Thread-51][EurekaServiceRegistry.java:65] - Unregistering application GATEWAY-SERVER with eureka with status DOWN
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,276 WARN [Thread-51][DiscoveryClient.java:1303] - Saw local status change event StatusChangeEvent [timestamp=1649110665276, current=DOWN, previous=UP]
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,276 INFO [DiscoveryClient-InstanceInfoReplicator-0][DiscoveryClient.java:826] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010: registering service...
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,279 INFO [Thread-51][ZuulFilterInitializer.java:77] - Stopping filter initializer
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,283 INFO [Thread-51][ShutdownEnabledTimer.java:67] - Shutdown hook removed for: NFLoadBalancer-PingTimer-account-service
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,283 INFO [Thread-51][ShutdownEnabledTimer.java:72] - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:337)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:271)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:975)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:79)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945)
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,282 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:91] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -54,11 +106,44 @@ Caused by: org.apache.http.NoHttpResponseException: localhost:53000 failed to re
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 30 more
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,556 WARN [DiscoveryClient-InstanceInfoReplicator-0][RetryableEurekaHttpClient.java:130] - Request execution failed with message: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,557 INFO [Thread-54][ExecutorConfigurationSupport.java:208] - Shutting down ExecutorService 'applicationTaskExecutor'
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,558 INFO [DiscoveryClient-InstanceInfoReplicator-0][DefaultRequestDirector.java:690] - I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:53000: Software caused connection abort: socket write error
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,559 INFO [DiscoveryClient-InstanceInfoReplicator-0][DefaultRequestDirector.java:700] - Retrying request to {}->http://localhost:53000
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,561 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,290 WARN [DiscoveryClient-InstanceInfoReplicator-0][RetryableEurekaHttpClient.java:130] - Request execution failed with message: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,294 INFO [Thread-51][ShutdownEnabledTimer.java:67] - Shutdown hook removed for: NFLoadBalancer-PingTimer-consumer-service
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,295 INFO [Thread-51][ShutdownEnabledTimer.java:72] - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:337)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:271)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:975)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:79)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1055)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1062)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945)
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,297 INFO [DiscoveryClient-InstanceInfoReplicator-0][DefaultRequestDirector.java:690] - I/O exception (java.net.SocketException) caught when processing request to {}->http://localhost:53000: Software caused connection abort: socket write error
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,297 INFO [DiscoveryClient-InstanceInfoReplicator-0][DefaultRequestDirector.java:700] - Retrying request to {}->http://localhost:53000
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,298 INFO [Thread-51][ExecutorConfigurationSupport.java:208] - Shutting down ExecutorService 'applicationTaskExecutor'
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,299 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: org.apache.http.client.ClientProtocolException
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -146,8 +231,8 @@ Caused by: java.net.SocketException: Software caused connection abort: socket wr
 		at com.fasterxml.jackson.databind.util.ClassUtil.closeOnFailAndThrowAsIOE(ClassUtil.java:488)
 		at com.fasterxml.jackson.databind.ObjectWriter._configAndWriteValue(ObjectWriter.java:1122)
 		... 50 more
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,564 WARN [DiscoveryClient-InstanceInfoReplicator-0][RetryableEurekaHttpClient.java:130] - Request execution failed with message: org.apache.http.client.ClientProtocolException
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,565 WARN [DiscoveryClient-InstanceInfoReplicator-0][DiscoveryClient.java:831] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010 - registration failed Cannot execute request on any known server
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,305 WARN [DiscoveryClient-InstanceInfoReplicator-0][RetryableEurekaHttpClient.java:130] - Request execution failed with message: org.apache.http.client.ClientProtocolException
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,306 WARN [DiscoveryClient-InstanceInfoReplicator-0][DiscoveryClient.java:831] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010 - registration failed Cannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -165,7 +250,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:45,566 WARN [DiscoveryClient-InstanceInfoReplicator-0][InstanceInfoReplicator.java:125] - There was a problem with the instance info replicator
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,307 WARN [DiscoveryClient-InstanceInfoReplicator-0][InstanceInfoReplicator.java:125] - There was a problem with the instance info replicator
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
@@ -183,9 +268,9 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:46,704 INFO [Thread-54][DiscoveryClient.java:888] - Shutting down DiscoveryClient ...
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:49,706 INFO [Thread-54][DiscoveryClient.java:922] - Unregistering ...
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:53,736 ERROR [Thread-54][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:46,428 INFO [Thread-51][DiscoveryClient.java:888] - Shutting down DiscoveryClient ...
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:49,429 INFO [Thread-51][DiscoveryClient.java:922] - Unregistering ...
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:53,448 ERROR [Thread-51][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -250,8 +335,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 42 more
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:53,737 WARN [Thread-54][RetryableEurekaHttpClient.java:130] - Request execution failed with message: java.net.ConnectException: Connection refused: connect
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:53,738 ERROR [Thread-54][DiscoveryClient.java:926] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010 - de-registration failedCannot execute request on any known server
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:53,449 WARN [Thread-51][RetryableEurekaHttpClient.java:130] - Request execution failed with message: java.net.ConnectException: Connection refused: connect
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:53,449 ERROR [Thread-51][DiscoveryClient.java:926] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010 - de-registration failedCannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
@@ -280,4 +365,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1057)
 	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1026)
 	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:945)
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-04 22:13:53,752 INFO [Thread-54][DiscoveryClient.java:911] - Completed shut down of DiscoveryClient
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:53,454 INFO [Thread-51][DiscoveryClient.java:911] - Completed shut down of DiscoveryClient

@@ -6,6 +6,7 @@ import cn.itcast.wanxinp2p.account.service.AccountService;
 import cn.itcast.wanxinp2p.account.service.SmsService;
 import cn.itcast.wanxinp2p.api.account.AccountAPI;
 import cn.itcast.wanxinp2p.api.account.model.AccountDTO;
+import cn.itcast.wanxinp2p.api.account.model.AccountLoginDTO;
 import cn.itcast.wanxinp2p.api.account.model.AccountRegisterDTO;
 import cn.itcast.wanxinp2p.common.domain.RestResponse;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -40,7 +41,6 @@ public class AccountController extends ServiceImpl<AccountMapper, Account> imple
     @ApiImplicitParam(name = "mobile", value = "手机号", dataType = "String")
     @GetMapping("/sms/{mobile}")
     public RestResponse getSMSCode(@PathVariable String mobile) {
-
         return smsService.getSmsCode(mobile);
     }
 
@@ -66,6 +66,17 @@ public class AccountController extends ServiceImpl<AccountMapper, Account> imple
     @PostMapping(value = "/l/accounts")
     public RestResponse<AccountDTO> register(@RequestBody AccountRegisterDTO accountRegisterDTO) {
         return RestResponse.success(accountService.register(accountRegisterDTO));
+    }
+
+    @Override
+    @ApiOperation("用户登录")
+    @ApiImplicitParam(name = "accountLoginDTO", value = "登录信息", required =
+            true,
+            dataType = "AccountLoginDTO", paramType
+            = "body")
+    @PostMapping(value = "/l/accounts/session")
+    public RestResponse<AccountDTO> login(@RequestBody AccountLoginDTO accountLoginDTO) {
+        return RestResponse.success(accountService.login(accountLoginDTO));
     }
 
 }

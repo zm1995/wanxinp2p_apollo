@@ -1,4 +1,4 @@
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 05:11:11,867 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:91] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,282 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:91] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -47,8 +47,8 @@ Caused by: org.apache.http.NoHttpResponseException: localhost:53000 failed to re
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 30 more
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 05:11:11,880 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
-com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:45,299 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+com.sun.jersey.api.client.ClientHandlerException: org.apache.http.client.ClientProtocolException
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
 	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
@@ -81,23 +81,61 @@ com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponse
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-Caused by: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
-	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:141)
-	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
-	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
-	at org.apache.http.impl.AbstractHttpClientConnection.receiveResponseHeader(AbstractHttpClientConnection.java:294)
-	at org.apache.http.impl.conn.DefaultClientConnection.receiveResponseHeader(DefaultClientConnection.java:257)
-	at org.apache.http.impl.conn.AbstractClientConnAdapter.receiveResponseHeader(AbstractClientConnAdapter.java:230)
-	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
-	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:679)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:481)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+Caused by: org.apache.http.client.ClientProtocolException
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:839)
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 31 more
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 05:11:20,040 ERROR [Thread-54][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+Caused by: org.apache.http.client.NonRepeatableRequestException: Cannot retry request with a non-repeatable request entity.  The cause lists the reason the original request failed.
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:653)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:481)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	... 34 more
+Caused by: java.net.SocketException: Software caused connection abort: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:160)
+	at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:168)
+	at org.apache.http.impl.io.ChunkedOutputStream.flush(ChunkedOutputStream.java:192)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1100)
+	at com.fasterxml.jackson.databind.ObjectMapper.writeValue(ObjectMapper.java:2657)
+	at com.fasterxml.jackson.core.base.GeneratorBase.writeObject(GeneratorBase.java:381)
+	at com.fasterxml.jackson.core.JsonGenerator.writeObjectField(JsonGenerator.java:1726)
+	at com.netflix.discovery.converters.EurekaJacksonCodec$InstanceInfoSerializer.serialize(EurekaJacksonCodec.java:371)
+	at com.netflix.discovery.converters.EurekaJacksonCodec$InstanceInfoSerializer.serialize(EurekaJacksonCodec.java:327)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:468)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:397)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1392)
+	at com.fasterxml.jackson.databind.ObjectWriter._configAndWriteValue(ObjectWriter.java:1120)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:950)
+	at com.netflix.discovery.converters.EurekaJacksonCodec.writeTo(EurekaJacksonCodec.java:221)
+	at com.netflix.discovery.converters.wrappers.CodecWrappers$LegacyJacksonJson.encode(CodecWrappers.java:304)
+	at com.netflix.discovery.provider.DiscoveryJerseyProvider.writeTo(DiscoveryJerseyProvider.java:135)
+	at com.sun.jersey.api.client.RequestWriter$RequestEntityWriterImpl.writeRequestEntity(RequestWriter.java:231)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler$2.writeTo(ApacheHttpClient4Handler.java:289)
+	at org.apache.http.entity.HttpEntityWrapper.writeTo(HttpEntityWrapper.java:96)
+	at org.apache.http.impl.client.EntityEnclosingRequestWrapper$EntityWrapper.writeTo(EntityEnclosingRequestWrapper.java:110)
+	at org.apache.http.impl.entity.EntitySerializer.serialize(EntitySerializer.java:118)
+	at org.apache.http.impl.AbstractHttpClientConnection.sendRequestEntity(AbstractHttpClientConnection.java:274)
+	at org.apache.http.impl.conn.AbstractClientConnAdapter.sendRequestEntity(AbstractClientConnAdapter.java:239)
+	at org.apache.http.protocol.HttpRequestExecutor.doSendRequest(HttpRequestExecutor.java:238)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryExecute(DefaultRequestDirector.java:679)
+	... 36 more
+	Suppressed: java.net.SocketException: Software caused connection abort: socket write error
+		at java.net.SocketOutputStream.socketWrite0(Native Method)
+		at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+		at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+		at org.apache.http.impl.io.AbstractSessionOutputBuffer.flushBuffer(AbstractSessionOutputBuffer.java:160)
+		at org.apache.http.impl.io.AbstractSessionOutputBuffer.flush(AbstractSessionOutputBuffer.java:168)
+		at org.apache.http.impl.io.ChunkedOutputStream.close(ChunkedOutputStream.java:203)
+		at com.fasterxml.jackson.core.json.UTF8JsonGenerator.close(UTF8JsonGenerator.java:1138)
+		at com.fasterxml.jackson.databind.util.ClassUtil.closeOnFailAndThrowAsIOE(ClassUtil.java:488)
+		at com.fasterxml.jackson.databind.ObjectWriter._configAndWriteValue(ObjectWriter.java:1122)
+		... 50 more
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:53,448 ERROR [Thread-51][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -162,7 +200,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 42 more
-[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 05:11:20,042 ERROR [Thread-54][DiscoveryClient.java:926] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010 - de-registration failedCannot execute request on any known server
+[wanxinp2p-gateway-server][${env:SERVER_PORT}] 2022-04-05 06:17:53,449 ERROR [Thread-51][DiscoveryClient.java:926] - DiscoveryClient_GATEWAY-SERVER/gateway-server:192.168.56.1:53010 - de-registration failedCannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)

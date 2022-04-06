@@ -1,4 +1,4 @@
-[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-04 22:13:45,628 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:91] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-05 05:11:11,979 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:91] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -47,7 +47,7 @@ Caused by: org.apache.http.NoHttpResponseException: localhost:53000 failed to re
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 30 more
-[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-04 22:13:45,637 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-05 05:11:11,991 ERROR [DiscoveryClient-InstanceInfoReplicator-0][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: org.apache.http.NoHttpResponseException: localhost:53000 failed to respond
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -97,7 +97,7 @@ Caused by: org.apache.http.NoHttpResponseException: localhost:53000 failed to re
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 31 more
-[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-04 22:13:53,780 ERROR [Thread-66][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
+[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-05 05:11:20,131 ERROR [Thread-65][RedirectingEurekaHttpClient.java:83] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:53000/eureka/}
 com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
 	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
@@ -162,7 +162,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
 	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
 	... 42 more
-[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-04 22:13:53,781 ERROR [Thread-66][DiscoveryClient.java:926] - DiscoveryClient_ACCOUNT-SERVICE/account-service:192.168.56.1:53030 - de-registration failedCannot execute request on any known server
+[wanxinp2p-account-service][${env:SERVER_PORT}] 2022-04-05 05:11:20,133 ERROR [Thread-65][DiscoveryClient.java:926] - DiscoveryClient_ACCOUNT-SERVICE/account-service:192.168.56.1:53030 - de-registration failedCannot execute request on any known server
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
