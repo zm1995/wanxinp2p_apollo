@@ -9,17 +9,25 @@ import cn.itcast.wanxinp2p.common.domain.CodePrefixCode;
 import cn.itcast.wanxinp2p.common.domain.CommonErrorCode;
 import cn.itcast.wanxinp2p.common.domain.RestResponse;
 import cn.itcast.wanxinp2p.common.util.CodeNoUtil;
+import cn.itcast.wanxinp2p.common.util.EncryptUtil;
 import cn.itcast.wanxinp2p.consumer.agent.AccountApiAgent;
 import cn.itcast.wanxinp2p.consumer.common.ConsumerErrorCode;
 import cn.itcast.wanxinp2p.consumer.entity.Consumer;
 import cn.itcast.wanxinp2p.consumer.mapper.ConsumerMapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.dromara.hmily.annotation.Hmily;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
+@Slf4j
 public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer> implements ConsumerService{
 
     @Autowired
@@ -54,6 +62,7 @@ public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer> i
      * @param consumerRegisterDTO
      */
     @Override
+    @Hmily(confirmMethod = "confirmRegister",cancelMethod = "cancelRegister")
     public void register(ConsumerRegisterDTO consumerRegisterDTO) {
         if(checkMobile(consumerRegisterDTO.getMobile())==1){
             throw new BusinessException(ConsumerErrorCode.E_140107);
@@ -74,4 +83,22 @@ public class ConsumerServiceImpl extends ServiceImpl<ConsumerMapper, Consumer> i
             throw new BusinessException(ConsumerErrorCode.E_140106);
         }
     }
+
+    public void confirmRegister(ConsumerRegisterDTO consumerRegisterDTO) {
+        log.info("execute confirmRegister");
+    }
+
+    public void cancelRegister(ConsumerRegisterDTO consumerRegisterDTO) {
+        log.info("execute cancelRegister");
+        remove(Wrappers.<Consumer>lambdaQuery().eq(Consumer::getMobile,
+                consumerRegisterDTO.getMobile()));
+    }
+
+    @ApiOperation("过网关受保护资源，进行认证拦截测试")
+    @ApiImplicitParam(name="jsonToken",value="访问令牌",required = true,dataType = "String")
+    @GetMapping(value="/m/consumers/test")
+    public RestResponse<String> testResources(String jsonToken){
+        return RestResponse.success(EncryptUtil.decodeUTF8StringBase64(jsonToken));
+    }
+
 }
